@@ -61,8 +61,8 @@ for num_intervals, data in results.items():
     times = [item[1] for item in data]  # Время выполнения
     plt.plot(procs, times, marker='o', label=f"Intervals = {num_intervals}")
 
-plt.title("Зависимость времени выполнения от количества процессов")
-plt.xlabel("Количество процессов")
+plt.title("Зависимость времени выполнения от количества потоков")
+plt.xlabel("Количество потоков")
 plt.ylabel("Среднее время выполнения (секунды)")
 plt.grid(True)
 plt.legend()
