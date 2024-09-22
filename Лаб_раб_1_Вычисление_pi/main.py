@@ -39,9 +39,9 @@ def run_mpi(num_procs, num_intervals, num_attempts):
 # Внешний цикл по количеству процессов
 procs_list = [1, 2, 4, 8]
 # Внутренний цикл по количеству интервалов
-intervals_list = [1, 20, 100]
+intervals_list = [1, 200, 1000, 10000]
 # Глубокий цикл по количеству попыток
-attempts_list = [1, 3, 5]
+attempts_list = [1, 3, 5,10]
 
 # Словарь для сохранения времени выполнения
 results = {}
