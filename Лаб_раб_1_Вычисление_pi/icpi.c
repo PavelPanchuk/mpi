@@ -2,7 +2,7 @@
 #include "mpi.h"
 #include <stdio.h>
 #include <math.h>
-
+#include <omp.h>
 double f(double);
 
 double f(double a)
