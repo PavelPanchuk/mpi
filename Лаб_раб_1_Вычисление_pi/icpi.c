@@ -2,7 +2,7 @@
 #include <stdio.h>
 #include <math.h>
 #include <stdlib.h>  // Для использования функции atoi
-
+//mpirun.mpich -n 8 -f host-file-by-ip /home/user/workspace/Panchuk/Лаб_раб_1_Вычисление_pi/a.out 1000000000
 double f(double);
 
 double f(double a)
