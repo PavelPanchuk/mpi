@@ -6,9 +6,9 @@ def run_mpi(num_procs, num_intervals, num_attempts):
     times = []
     for attempt in range(num_attempts):
         result = subprocess.run(
-        ["mpirun.mpich -n", str(num_procs)," -f host-file-by-ip /home/user/workspace/Panchuk/Лаб_раб_1_Вычисление_pi/a.out ", str(num_intervals)],
+            ["mpirun.mpich", "-n", str(num_procs)," ","-f", " ","host-file-by-ip", " ", "/home/user/workspace/Panchuk/Лаб_раб_1_Вычисление_pi/a.out"," ", str(num_intervals)],
             #["mpirun.openmpi", "-np", str(num_procs), "./mypiout", str(num_intervals)],
-        stdout=subprocess.PIPE, stderr=subprocess.PIPE, text=True
+            stdout=subprocess.PIPE, stderr=subprocess.PIPE, text=True
         )
         
         output = result.stdout
