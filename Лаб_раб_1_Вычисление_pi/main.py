@@ -10,7 +10,7 @@ def run_mpi(num_procs, num_intervals, num_attempts):
     times = []
     for attempt in range(num_attempts):
         result = subprocess.run(
-            ["mpirun", "-np", str(num_procs), "./mypiout", str(num_intervals)],
+            ["mpirun.openmpi", "-np", str(num_procs), "./mypiout", str(num_intervals)],
             stdout=subprocess.PIPE, stderr=subprocess.PIPE, text=True
         )
         
@@ -18,6 +18,7 @@ def run_mpi(num_procs, num_intervals, num_attempts):
         # Поиск строки с "wall clock time"
         found_time = False
         for line in output.splitlines():
+            print(line)
             if "wall clock time" in line:
                 try:
                     time = float(line.split("=")[1].strip())
@@ -37,11 +38,11 @@ def run_mpi(num_procs, num_intervals, num_attempts):
     return np.mean(times)
 
 # Внешний цикл по количеству процессов
-procs_list = [1, 2, 4, 8, 16, 20,40,50,60,70, 80]
+procs_list = [1, 2,3, 4,5,6,7, 8,9,10,11,12,13,14,15, 16]
 # Внутренний цикл по количеству интервалов
 intervals_list = [80]
 # Глубокий цикл по количеству попыток
-attempts_list = [10]
+attempts_list = [1]
 
 # Словарь для сохранения времени выполнения
 results = {}
