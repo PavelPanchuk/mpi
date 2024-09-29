@@ -2,7 +2,7 @@
 #include <stdio.h>
 #include <math.h>
 #include <stdlib.h>  // Для использования функции atoi
-//mpirun.mpich -n 8 -f host-file-by-ip /home/user/workspace/Panchuk/Лаб_раб_1_Вычисление_pi/a.out 1000000000
+
 double f(double);
 
 double f(double a)
@@ -61,7 +61,7 @@ int main(int argc, char *argv[])
     MPI_Reduce(&mypi, &pi, 1, MPI_DOUBLE, MPI_SUM, 0, MPI_COMM_WORLD);
 
     if (myid == 0) {
-        //printf("pi is approximately %.16f, Error is %.16f\n",pi, fabs(pi - PI25DT));
+        printf("pi is approximately %.16f, Error is %.16f\n",pi, fabs(pi - PI25DT));
         endwtime = MPI_Wtime();
         printf("wall clock time = %f\n", endwtime - startwtime);
         //printf("%f\n", endwtime - startwtime);
